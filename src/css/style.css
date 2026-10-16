@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:root {
+  --bg: #faf7f0;
+  --text: #2f2822;
+  --muted: #726855;
+  --accent: #317d32;
+  --line: #d6d0c5;
+
+  --space-xs: 0.5rem;
+  --space-s: 1rem;
+  --space-m: 1.25rem;
+  --space-l: 2.5rem;
+  --space-xl: 3rem;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+body {
+  margin: 0 auto;
+  padding-inline: var(--space-m);
+  max-width: 40rem;
+  font-family: "Iowan Old Style", Georgia, serif;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  overflow-wrap: break-word;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Header + nav */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-xs) 1.5rem;
+  padding: var(--space-m) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-title {
+  font-size: 1.25rem;
+}
+
+.site-header ul {
+  display: flex;
+  gap: var(--space-m);
+  padding: 0;
+  list-style: none;
+}
+
+.site-header a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-header a:hover {
+  color: var(--text);
+}
+
+.site-header .site-title {
+  color: var(--text);
+}
+
+.site-header a[aria-current="page"] {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.35em;
+}
+
+/* Main content */
+main {
+  padding: var(--space-l) 0;
+}
+
+main > * + * {
+  margin-top: var(--space-s);
+}
+
+main h1,
+main h2 {
+  font-weight: 400;
+}
+
+main h1 {
+  font-size: 2.25rem;
+}
+
+main h2 {
+  margin-top: var(--space-l);
+  font-size: 1.5rem;
+}
+
+main ul {
+  padding-left: var(--space-m);
+}
+
+main li + li {
+  margin-top: var(--space-xs);
+}
+
+/* Footer */
+.site-footer {
+  margin-top: var(--space-xl);
+  padding: var(--space-s) 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Homepage hero */
+.hero {
+  text-align: center;
+}
+
+.hero > * + * {
+  margin-top: var(--space-xs);
+}
+
+.hero h1 {
+  font-size: clamp(2.75rem, 1rem + 7vw, 4rem);
+}
+
+.hero p {
+  color: var(--muted);
+  font-size: 1.15rem;
+}

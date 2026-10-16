@@ -1,0 +1,10 @@
+{
+  "title": "Danny & Emma",
+  "date": "Saturday, October 9, 2027",
+  "venue": "Garden Gate at Haley Farm",
+  "location": "Sebago, Maine",
+  "nav": [
+    { "label": "Home", "url": "/" },
+    { "label": "Travel", "url": "/travel/" }
+  ]
+}
