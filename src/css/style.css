@@ -44,10 +44,10 @@ p {
 
 :root {
   --bg: #faf7f0;
-  --text: #2f2822;
-  --muted: #726855;
-  --accent: #317d32;
-  --line: #d6d0c5;
+  --text: #473627;
+  --muted: #705d46;
+  --accent: #468546;
+  --line: #c9bca3;
 
   --space-xs: 0.5rem;
   --space-s: 1rem;
