@@ -17,13 +17,27 @@ export default function (data) {
     })
     .join("\n          ");
 
+  const pageTitle = title ? `${title} | ${site.title}` : site.title;
+  const description = `${site.title} are getting married on ${site.date}.`;
+  const shareImage = `${site.url}/images/og.jpg`;
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${title ? `${esc(title)} | ` : ""}${esc(site.title)}</title>
-  <meta name="description" content="${esc(site.title)} are getting married on ${esc(site.date)}.">
+  <title>${esc(pageTitle)}</title>
+  <meta name="description" content="${esc(description)}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${esc(site.title)}">
+  <meta property="og:title" content="${esc(pageTitle)}">
+  <meta property="og:description" content="${esc(description)}">
+  <meta property="og:image" content="${shareImage}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="800">
+  <meta property="og:image:alt" content="${esc(site.title)} smiling together">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css">
 <script defer src="https://cdn.jsdelivr.net/npm/quicklink@3.0.2/dist/quicklink.umd.js"></script>
 <script>
@@ -35,8 +49,8 @@ export default function (data) {
 <body>
   <header class="site-header">
     <a class="site-logo" href="/" aria-label="${esc(site.title)}, home">
-      <img src="/images/logo.svg" alt="" eleventy:ignore>
-      <img class="site-logo__hover" src="/images/logo-hats.svg" alt="" eleventy:ignore>
+      <img src="/images/logo.svg" alt="" width="2786" height="3234" eleventy:ignore>
+      <img class="site-logo__hover" src="/images/logo-hats.svg" alt="" width="2786" height="3234" eleventy:ignore>
     </a>
     <nav aria-label="Main">
       <ul>

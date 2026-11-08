@@ -15,6 +15,8 @@ title: Home
   <img
     src="/images/hero.jpg"
     alt="Danny and Emma"
+    loading="eager"
+    fetchpriority="high"
     sizes="(max-width: 44rem) 100vw, 22rem"
   />
 </div>

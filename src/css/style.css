@@ -107,6 +107,7 @@ a:focus-visible {
 .site-logo img {
   grid-area: 1 / 1;
   height: 4.25rem;
+  width: auto;
 }
 
 .site-logo__hover {
@@ -199,6 +200,32 @@ main ul {
 
 main li + li {
   margin-top: var(--space-xs);
+}
+
+/* Q&A: bold questions, with a gap before the answer when open */
+main summary {
+  font-weight: 700;
+  cursor: pointer;
+}
+
+main details[open] summary {
+  margin-bottom: var(--space-s);
+}
+
+main details p + p {
+  margin-top: var(--space-s);
+}
+
+main details + details {
+  margin-top: var(--space-m);
+}
+
+/* Callout: draws attention to a note, e.g. <p class="callout"> */
+.callout {
+  padding: var(--space-s);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--accent) 10%, var(--bg));
 }
 
 /* Footer */
