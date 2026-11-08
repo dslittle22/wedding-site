@@ -1,6 +1,15 @@
 import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
+import markdownItLinkAttributes from "markdown-it-link-attributes";
 
 export default function (eleventyConfig) {
+  // Open absolute (http/https) links in a new tab
+  eleventyConfig.amendLibrary("md", (md) =>
+    md.use(markdownItLinkAttributes, {
+      matcher: (href) => /^https?:\/\//.test(href),
+      attrs: { target: "_blank", rel: "noopener noreferrer" },
+    }),
+  );
+
   // Copy static assets to _site
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images/*.svg");
