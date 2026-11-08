@@ -5,6 +5,8 @@
   "location": "Sebago, Maine",
   "nav": [
     { "label": "Home", "url": "/" },
-    { "label": "Travel", "url": "/travel/" }
+    { "label": "Travel", "url": "/travel/" },
+    { "label": "Schedule", "url": "/schedule/" },
+    { "label": "Q&A", "url": "/q%26a/" }
   ]
 }

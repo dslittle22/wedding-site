@@ -46,7 +46,7 @@ p {
   --bg: #faf7f0;
   --text: #473627;
   --muted: #705d46;
-  --accent: #468546;
+  --accent: #327644;
   --line: #c9bca3;
 
   --space-xs: 0.5rem;
@@ -92,14 +92,59 @@ a:focus-visible {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-xs) 1.5rem;
   padding: var(--space-m) 0;
   border-bottom: 1px solid var(--line);
 }
 
-.site-title {
-  font-size: 1.25rem;
+/* Both logos share one grid cell and have identical dimensions. The hats
+   version fades in over the plain one, and the whole logo tilts and grows. */
+.site-logo {
+  display: grid;
+}
+
+.site-logo img {
+  grid-area: 1 / 1;
+  height: 4.25rem;
+}
+
+.site-logo__hover {
+  opacity: 0;
+}
+
+/* Touch devices: a tap on the home page toggles .show-hats (see layout) */
+.site-logo.show-hats .site-logo__hover {
+  opacity: 1;
+}
+
+/* Only where hovering is real: on touch screens :hover sticks after a tap,
+   which would fight the .show-hats toggle. */
+@media (hover: hover) {
+  .site-logo:is(:hover, :focus-visible) .site-logo__hover {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-logo {
+    --tilt: rotate(-3deg) scale(1.04);
+    transition: transform 0.2s ease;
+  }
+
+  .site-logo__hover {
+    transition: opacity 0.3s ease;
+  }
+
+  .site-logo.show-hats {
+    transform: var(--tilt);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .site-logo:is(:hover, :focus-visible) {
+    transform: var(--tilt);
+  }
 }
 
 .site-header ul {
@@ -115,10 +160,6 @@ a:focus-visible {
 }
 
 .site-header a:hover {
-  color: var(--text);
-}
-
-.site-header .site-title {
   color: var(--text);
 }
 
@@ -169,20 +210,68 @@ main li + li {
   font-size: 0.9rem;
 }
 
+/* Schedule: time + event rows, aligned in two columns */
+.schedule {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-s) var(--space-l);
+  margin-bottom: var(--space-l);
+  font-size: 1.15rem;
+}
+
+.schedule dt {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.schedule dd {
+  color: var(--muted);
+}
+
 /* Homepage hero */
 .hero {
   text-align: center;
 }
 
-.hero > * + * {
+.hero h1 {
+  font-size: clamp(2.5rem, 1rem + 7vw, 3.5rem);
+}
+
+/* Breakout: wider than the body's max-width, but never wider than the
+   viewport minus the body padding. The margin re-centers the overflow. */
+.breakout {
+  --breakout-width: min(44rem, 100vw - 2 * var(--space-m));
+  width: var(--breakout-width);
+  margin-inline: calc((100% - var(--breakout-width)) / 2);
+}
+
+/* Text on the left, photo on the right; stacked on narrow screens. */
+.hero-info {
+  display: grid;
+  grid-template-columns: 1fr 22rem;
+  align-items: center;
+  gap: var(--space-l);
+  margin-top: var(--space-l);
+}
+
+.hero-info__text {
+  color: var(--text);
+  font-size: 1.35rem;
+  text-align: center;
+}
+
+.hero-info__text > * + * {
   margin-top: var(--space-xs);
 }
 
-.hero h1 {
-  font-size: clamp(2.75rem, 1rem + 7vw, 4rem);
+.hero-info img {
+  width: 100%;
+  border-radius: 4px;
 }
 
-.hero p {
-  color: var(--muted);
-  font-size: 1.15rem;
+@media (max-width: 44rem) {
+  .hero-info {
+    grid-template-columns: 1fr;
+    gap: var(--space-m);
+  }
 }

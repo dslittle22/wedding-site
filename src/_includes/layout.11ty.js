@@ -11,7 +11,8 @@ export default function (data) {
 
   const nav = site.nav
     .map((item) => {
-      const current = item.url === page.url ? ' aria-current="page"' : "";
+      const current =
+        decodeURIComponent(item.url) === page.url ? ' aria-current="page"' : "";
       return `<li><a href="${item.url}"${current}>${esc(item.label)}</a></li>`;
     })
     .join("\n          ");
@@ -33,7 +34,10 @@ export default function (data) {
 </head>
 <body>
   <header class="site-header">
-    <a class="site-title" href="/">${esc(site.title)}</a>
+    <a class="site-logo" href="/" aria-label="${esc(site.title)}, home">
+      <img src="/images/logo.svg" alt="" eleventy:ignore>
+      <img class="site-logo__hover" src="/images/logo-hats.svg" alt="" eleventy:ignore>
+    </a>
     <nav aria-label="Main">
       <ul>
           ${nav}
@@ -48,6 +52,17 @@ export default function (data) {
   <footer class="site-footer">
     <p>${esc(site.title)} &middot; ${esc(site.date)}</p>
   </footer>
+
+  <script>
+    // Touch devices have no hover: tapping the logo on the home page
+    // toggles the hats instead of reloading the page.
+    const logo = document.querySelector(".site-logo");
+    logo.addEventListener("click", (event) => {
+      if (location.pathname !== "/" || !matchMedia("(hover: none)").matches) return;
+      event.preventDefault();
+      logo.classList.toggle("show-hats");
+    });
+  </script>
 </body>
 </html>
 `;

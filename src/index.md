@@ -3,21 +3,18 @@ title: Home
 ---
 
 <header class="hero">
-  <h1>{{ site.title }}</h1>
-  <p>{{ site.date }}</p>
-   <p>
-    {{ site.location }}
-  </p>
-
+  <h1>Danny and Emma</h1>
 </header>
 
-## We are to be wed
-
-The rumors are true. Hold on to your butts.
-
-## Schedule
-
-- Ceremony at 4:00 PM
-- *Pizzuh* at 6:00 PM
-- Get Crunk at 7:30 PM
-
+<div class="hero-info breakout">
+  <div class="hero-info__text">
+    <p>{{ site.date }}</p>
+    <p>Garden Gate at Haley Farm</p>
+    <p>{{ site.location }}</p>
+  </div>
+  <img
+    src="/images/hero.jpg"
+    alt="Danny and Emma"
+    sizes="(max-width: 44rem) 100vw, 22rem"
+  />
+</div>
