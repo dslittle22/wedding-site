@@ -3,13 +3,13 @@ title: Home
 ---
 
 <header class="hero">
-  <h1>Danny and Emma</h1>
+  <h1>Danny &amp; Emma</h1>
 </header>
 
 <div class="hero-info breakout">
   <div class="hero-info__text">
-    <p>{{ site.date }}</p>
-    <p>Garden Gate at Haley Farm</p>
+    <p class="hero-info__date">Saturday<br />October 9, 2027</p>
+    <p>{{ site.venue }}</p>
     <p>{{ site.location }}</p>
   </div>
   <img
