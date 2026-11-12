@@ -13,7 +13,9 @@ The nearest airport is Portland International Jetport.
 
 The nearest hotel is [Dormir](https://www.dormirhotel.com/) in Windham, ME. This is about a 35-minute drive to the venue and about a 30-minute drive from Portland. There are a number of other options for accommodations [nearby](https://www.gardengatemaine.com/accommodations-1).
 
-We have a discounted rate through Dormir under the name “Little/Hatt”. This is first-come first-served, not a reserved block, so we recommend you book a room ASAP as our wedding falls on a holiday weekend!
+To book your room at Dormir, call the hotel at (207) 893-8870 and give either of our last names as the group code. This also gets you a discounted rate. (You cannot get the discount by booking online.)
+
+**This is first-come first-served, not a reserved block, so we recommend you book a room ASAP as our wedding falls on a holiday weekend!**
 
 Check-in at Dormir is at 3 pm. You may request early check-in, but it is not guaranteed, so we strongly recommend checking in on the night of Friday the 8th if possible. Our discounted rate applies to both Friday and Saturday night. 
 

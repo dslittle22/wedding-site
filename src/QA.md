@@ -6,7 +6,7 @@ permalink: "/q&a/"
 
 <details>
   <summary>What is your dress code?</summary>
-  <p>Semi-formal (suits, blazar and dress pants, midi or knee-length dresses, pantsuits, etc.).</p>
+  <p>Semi-formal (suits, blazer and dress pants, midi or knee-length dresses, pantsuits, etc.).</p>
   <p class="callout"><strong>Important:</strong> our ceremony will be outdoors (weather pending), so come prepared for Maine weather in October- bring a jacket! We'd also recommend choosing footwear that will be comfortable in grass (e.g. no pointy heels).</p>
 </details>
 
